@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+
+.container * {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container .box {
+  position: relative;
+  width: 400px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #212225, #313337);
+  border-radius: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.content form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  color: #fff;
+  width: 70%;
+}
+
+.logo {
+  display: grid;
+  place-content: center;
+  margin-bottom: 0.3em;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  color: #313337;
+  font-size: 2em;
+  border-radius: 50%;
+}
+
+.content form h1 {
+  line-height: 1;
+  font-size: 1.75em;
+  margin-top: -25px;
+}
+
+.content form .inputBox {
+  position: relative;
+  width: 100%;
+}
+
+.content form .inputBox input {
+  width: 100%;
+  padding: 7px 7px 7px 15px;
+  background: transparent;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #fff;
+}
+
+.content form .inputBox i {
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  font-size: 1em;
+}
+
+.content form .inputBox span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.625em 0 0.625em 1.5em;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: 300ms;
+}
+
+.content form .inputBox input:focus ~ span,
+.content form .inputBox input:valid ~ span {
+  transform: translateY(-20px);
+  font-size: 0.9em;
+  background: #fff;
+  color: #212225;
+  opacity: 1;
+  padding: 2px 4px;
+}
+
+.content form .links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content form .links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content form .links a:hover {
+  text-decoration: underline;
+}
+
+.content form .inputBox input[type="submit"] {
+  color: #111113;
+  background: #fff;
+  border: 2px solid #fff;
+  font-weight: 600;
+  padding: 0.625em;
+  cursor: pointer;
+}
+
+.content form .inputBox input[type="submit"]:hover {
+  color: #fff;
+  background: transparent;
+}
