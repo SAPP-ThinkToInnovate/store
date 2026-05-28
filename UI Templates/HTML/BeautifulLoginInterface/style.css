@@ -1,0 +1,272 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Background */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.glow1 {
+  width: 350px;
+  height: 350px;
+  background: #7c3aed;
+  top: -100px;
+  left: -100px;
+}
+
+.glow2 {
+  width: 400px;
+  height: 400px;
+  background: #06b6d4;
+  bottom: -120px;
+  right: -120px;
+}
+
+/* Main Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  z-index: 10;
+}
+
+.login-card {
+  display: flex;
+  border-radius: 28px;
+  overflow: hidden;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* Left Section */
+.left-section {
+  flex: 1;
+  padding: 70px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.left-section h1 {
+  font-size: 54px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  width: fit-content;
+}
+
+.feature span {
+  font-size: 22px;
+}
+
+.feature p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Right Section */
+.right-section {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.form-box {
+  width: 100%;
+}
+
+.form-box h2 {
+  font-size: 34px;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.sub-text {
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  transition: 0.3s ease;
+  background: white;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 5px rgba(124, 58, 237, 0.15);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+}
+
+.options a {
+  color: #7c3aed;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(124, 58, 237, 0.45);
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 24px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #7c3aed;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .login-card {
+    flex-direction: column;
+  }
+
+  .right-section {
+    width: 100%;
+  }
+
+  .left-section {
+    padding: 50px 40px;
+  }
+
+  .left-section h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-section {
+    padding: 40px 25px;
+  }
+
+  .right-section {
+    padding: 30px 22px;
+  }
+
+  .left-section h1 {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
