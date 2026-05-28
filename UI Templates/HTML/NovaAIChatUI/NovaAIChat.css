@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nova-chat-app {
+  display: flex;
+  height: 100vh;
+  background: #0f172a;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+
+.nova-sidebar {
+  width: 260px;
+  background: #111827;
+  border-right: 1px solid #1f2937;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nova-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.new-chat-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: 0.3s;
+}
+
+.new-chat-btn:hover {
+  background: #1d4ed8;
+}
+
+.chat-history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-item {
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.history-item:hover,
+.history-item.active {
+  background: #1e293b;
+}
+
+/* Main Chat */
+
+.nova-chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messages-container {
+  padding: 30px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.message-row {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.message-row.user {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.message-row.user .avatar {
+  background: #16a34a;
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 16px;
+  border-radius: 16px;
+  background: #1e293b;
+  line-height: 1.5;
+}
+
+.message-row.user .message-bubble {
+  background: #2563eb;
+}
+
+/* Input */
+
+.chat-input-section {
+  padding: 20px;
+  border-top: 1px solid #1f2937;
+  background: #111827;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.chat-input-wrapper textarea {
+  flex: 1;
+  resize: none;
+  height: 60px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 16px;
+  background: #1e293b;
+  color: white;
+  font-size: 15px;
+}
+
+.chat-input-wrapper button {
+  width: 100px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-input-wrapper button:hover {
+  background: #1d4ed8;
+}
+
+/* Typing Indicator */
+
+.typing-indicator {
+  display: flex;
+  gap: 6px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #1e293b;
+  width: fit-content;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  animation: bounce 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .nova-sidebar {
+    display: none;
+  }
+
+  .message-bubble {
+    max-width: 90%;
+  }
+}
