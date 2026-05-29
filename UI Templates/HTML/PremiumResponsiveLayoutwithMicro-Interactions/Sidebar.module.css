@@ -1,0 +1,150 @@
+.asideDesktop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  border-right: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  transition: width 0.3s ease;
+  display: block;
+}
+
+@media (max-width: 1024px) { .asideDesktop { display: none; } }
+
+.expanded { width: 260px; }
+.collapsed { width: 80px; }
+
+/* Mobile Sidebar Drawer styling */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.asideMobile {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  width: 260px;
+  background-color: var(--bg-surface);
+  transition: transform 0.3s ease;
+}
+
+.open { transform: translateX(0); }
+.closed { transform: translateX(-100%); }
+
+.innerContent {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.topSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  height: 36px;
+  width: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+
+.brandName {
+  font-weight: bold;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.hiddenText {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.nav {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.navLink:hover {
+  background-color: #f8fafc;
+  color: var(--text-main);
+}
+
+.activeLink {
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+}
+.activeLink:hover {
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+}
+
+.widget {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.widgetTitle {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.progressBar {
+  margin-top: 8px;
+  height: 6px;
+  width: 100%;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  width: 75%;
+  background-color: var(--primary-color);
+}
