@@ -20,7 +20,7 @@ const LayoutShell = ({ children }) => {
   );
 };
 
-export const AppLayout = ({ children }) => (
+export default AppLayout = ({ children }) => (
   <LayoutProvider>
     <LayoutShell>{children}</LayoutShell>
   </LayoutProvider>
