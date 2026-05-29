@@ -1,0 +1,130 @@
+.fieldGroup {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 0 16px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.input:focus {
+  border-color: var(--w-primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.inputError {
+  border-color: var(--w-danger);
+}
+
+.errorMsg {
+  color: var(--w-danger);
+  font-size: 12px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* Card Selection Array UI */
+.selectionGrid {
+  display: grid;
+  grid-template-cols: 1fr 1fr;
+  gap: 16px;
+}
+
+.selectCard {
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: transparent;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.selectCardActive {
+  border-color: var(--w-primary);
+  background-color: rgba(37, 99, 235, 0.03);
+}
+
+.radioCircle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.selectCardActive .radioCircle {
+  border-color: var(--w-primary);
+}
+
+.radioInner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--w-primary);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cardDesc {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: var(--w-muted);
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  accent-color: var(--w-primary);
+  margin-top: 2px;
+}
+
+.summaryBlock {
+  background: #f8fafc;
+  border: 1px solid var(--w-border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+}
+.summaryRow:last-child { border: none; }
+.summaryLabel { color: var(--w-muted); }
+.summaryValue { font-weight: 600; }
