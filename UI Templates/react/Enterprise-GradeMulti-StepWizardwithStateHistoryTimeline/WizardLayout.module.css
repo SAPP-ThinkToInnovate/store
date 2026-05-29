@@ -1,0 +1,156 @@
+:root {
+  --w-bg: #f8fafc;
+  --w-surface: #ffffff;
+  --w-border: #e2e8f0;
+  --w-primary: #2563eb;
+  --w-primary-light: #dbeafe;
+  --w-text: #0f172a;
+  --w-muted: #64748b;
+  --w-danger: #ef4444;
+}
+
+.wizardContainer {
+  min-height: 100vh;
+  background-color: var(--w-bg);
+  color: var(--w-text);
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  max-width: 680px;
+  background: var(--w-surface);
+  border: 1px solid var(--w-border);
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #f1f5f9;
+  border-bottom: 1px solid var(--w-border);
+}
+
+.historyControls {
+  display: flex;
+  gap: 8px;
+}
+
+.historyBtn {
+  border: 1px solid #cbd5e1;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--w-text);
+}
+
+.historyBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.draftBadge {
+  font-size: 11px;
+  color: var(--w-muted);
+  background: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+/* Step Indicators CSS Layout */
+.stepperHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 32px 16px 32px;
+  position: relative;
+}
+
+.stepNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  flex: 1;
+}
+
+.circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 2px solid var(--w-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--w-muted);
+  transition: all 0.3s;
+}
+
+.circleActive {
+  background: var(--w-primary);
+  border-color: var(--w-primary);
+  color: white;
+}
+
+.circleComplete {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.stepLabel {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--w-muted);
+}
+
+.stepLabelActive {
+  color: var(--w-primary);
+  font-weight: 600;
+}
+
+.body {
+  padding: 16px 32px 32px 32px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-top: 1px solid var(--w-border);
+  background: #fafafa;
+}
+
+.btnSec {
+  background: transparent;
+  border: 1px solid var(--w-border);
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btnPri {
+  background: var(--w-primary);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
