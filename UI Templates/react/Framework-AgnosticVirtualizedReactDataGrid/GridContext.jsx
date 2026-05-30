@@ -2,7 +2,6 @@ import React, { createContext, useContext, useState, useMemo } from 'react';
 
 const GridContext = createContext(undefined);
 
-// Generate dummy high-density performance test-dataset 
 const generateData = () => {
   return Array.from({ length: 5000 }).map((_, idx) => ({
     id: `row-${idx}`,
@@ -15,7 +14,7 @@ const generateData = () => {
 
 const INITIAL_COLUMNS = [
   { id: 'uuid', label: 'System UUID' },
-  { id: 'title', label: 'Resource Identifier string' },
+  { id: 'title', label: 'Resource Identifier String' },
   { id: 'metric', label: 'Performance Load' },
   { id: 'status', label: 'Lifecycle Status' }
 ];
@@ -28,7 +27,6 @@ export const GridProvider = ({ children }) => {
 
   const rawData = useMemo(() => generateData(), []);
 
-  // Filter pipeline tracking
   const filteredData = useMemo(() => {
     if (!searchTerm.trim()) return rawData;
     const lower = searchTerm.toLowerCase();
@@ -39,7 +37,6 @@ export const GridProvider = ({ children }) => {
     );
   }, [rawData, searchTerm]);
 
-  // Handle HTML5 Drag and Drop column indexes
   const handleColumnMove = (targetColId) => {
     if (!draggedColId || draggedColId === targetColId) return;
     
@@ -57,7 +54,7 @@ export const GridProvider = ({ children }) => {
     <GridContext.Provider value={{
       columns, draggedColId, setDraggedColId, handleColumnMove,
       searchTerm, setSearchTerm, filteredData,
-      scrollTop, setScrollTop, rowHeight: 48, viewportHeight: 400
+      scrollTop, setScrollTop, rowHeight: 52, viewportHeight: 450
     }}>
       {children}
     </GridContext.Provider>
