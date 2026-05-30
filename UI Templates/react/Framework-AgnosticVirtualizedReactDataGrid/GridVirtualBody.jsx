@@ -8,7 +8,6 @@ export const GridVirtualBody = () => {
 
   const totalHeight = filteredData.length * rowHeight;
 
-  // Compute indices mathematically based on top position
   const startIndex = Math.max(0, Math.floor(scrollTop / rowHeight) - 2);
   const endIndex = Math.min(filteredData.length - 1, Math.floor((scrollTop + viewportHeight) / rowHeight) + 2);
 
@@ -21,7 +20,6 @@ export const GridVirtualBody = () => {
 
   return (
     <div className={styles.scrollContainer} style={{ height: viewportHeight }} onScroll={handleScroll}>
-      {/* Absolute spacer pushes container scrollbars to accurate mock dimension sizes */}
       <div className={styles.totalHeightSpacer} style={{ height: totalHeight }} />
       
       <div className={styles.transformCanvas} style={{ transform: `translateY(${offsetY}px)` }}>
@@ -32,6 +30,10 @@ export const GridVirtualBody = () => {
                 {col.id === 'status' ? (
                   <span className={`${cellStyles.badge} ${cellStyles[row[col.id]]}`}>
                     {row[col.id]}
+                  </span>
+                ) : col.id === 'metric' ? (
+                  <span style={{ fontFamily: 'monospace', fontWeight: '500', color: '#334155' }}>
+                    {row[col.id]}%
                   </span>
                 ) : (
                   row[col.id]
