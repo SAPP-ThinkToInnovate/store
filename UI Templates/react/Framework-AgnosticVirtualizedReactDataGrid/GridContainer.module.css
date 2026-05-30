@@ -1,49 +1,107 @@
 :root {
   --g-bg: #ffffff;
   --g-surface: #f8fafc;
+  --g-surface-hover: #f1f5f9;
   --g-border: #e2e8f0;
   --g-text: #0f172a;
-  --g-muted: #64748b;
-  --g-primary: #6366f1;
+  --g-text-muted: #64748b;
+  --g-primary: #4f46e5;
+  --g-primary-light: #eef2ff;
+  --g-glow: rgba(79, 70, 229, 0.08);
 }
 
 .gridWrapper {
   background: var(--g-bg);
   border: 1px solid var(--g-border);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  font-family: system-ui, -apple-system, sans-serif;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
 .searchToolbar {
-  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
   border-bottom: 1px solid var(--g-border);
-  background: #fafafa;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  gap: 16px;
+}
+
+.searchGroup {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--g-text-muted);
+  pointer-events: none;
 }
 
 .searchInput {
   width: 100%;
-  max-width: 320px;
-  height: 38px;
-  border-radius: 8px;
+  height: 42px;
+  border-radius: 10px;
   border: 1px solid #cbd5e1;
-  padding: 0 12px;
+  background-color: #ffffff;
+  padding: 0 16px 0 42px;
   font-size: 14px;
+  color: var(--g-text);
   outline: none;
-  transition: border-color 0.2s;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .searchInput:focus {
   border-color: var(--g-primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px var(--g-glow);
 }
 
-/* Scroll Virtualization Canvas */
+.metaCounter {
+  font-size: 13px;
+  color: var(--g-text-muted);
+  background: var(--g-surface-hover);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid var(--g-border);
+}
+
+.metaCounter strong {
+  color: var(--g-primary);
+  font-weight: 600;
+}
+
+/* Scroll Window Area & Custom Grid Viewport Scrollbars */
 .scrollContainer {
   position: relative;
   overflow: auto;
   background: #ffffff;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 .totalHeightSpacer {
@@ -61,6 +119,7 @@
   display: flex;
   background: var(--g-surface);
   border-bottom: 2px solid var(--g-border);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.015);
 }
 
 .transformCanvas {
