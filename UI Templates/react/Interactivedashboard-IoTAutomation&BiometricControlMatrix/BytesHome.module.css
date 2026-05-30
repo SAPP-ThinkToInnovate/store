@@ -1,0 +1,292 @@
+:root {
+  --h-bg: #06080f;
+  --h-surface: rgba(15, 22, 42, 0.6);
+  --h-surface-solid: #0f162a;
+  --h-card-bg: rgba(30, 41, 59, 0.4);
+  --h-border: rgba(255, 255, 255, 0.06);
+  --h-text: #f8fafc;
+  --h-text-muted: #64748b;
+  --h-cyber-cyan: #06b6d4;
+  --h-cyber-glow: rgba(6, 182, 212, 0.15);
+  --h-emerald: #10b981;
+}
+
+.dashboardViewport {
+  background-color: var(--h-bg);
+  background: radial-gradient(circle at 100% 100%, #083344 0%, var(--h-bg) 50%);
+  color: var(--h-text);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+.layoutContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+}
+
+/* Biometric Control Panel Sidebar */
+.biometricPanel {
+  background: var(--h-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--h-border);
+  border-radius: 24px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profileCard {
+  text-align: center;
+  border-bottom: 1px solid var(--h-border);
+  padding-bottom: 28px;
+}
+
+.avatarRing {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 4px;
+  border: 2px dashed var(--h-cyber-cyan);
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userName {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.clearanceBadge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--h-cyber-cyan);
+  background: rgba(6, 182, 212, 0.1);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+
+.telemetryList {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.telemetryNode {
+  background: var(--h-card-bg);
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--h-border);
+}
+
+.telLabel {
+  font-size: 12px;
+  color: var(--h-text-muted);
+}
+
+.telValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 4px;
+}
+
+/* Main Control Matrix Grid Canvas */
+.matrixCanvas {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.roomGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Touch Control Room Modals Cards */
+.roomCard {
+  background: var(--h-surface);
+  border: 1px solid var(--h-border);
+  border-radius: 20px;
+  padding: 24px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.roomCard:hover {
+  border-color: var(--h-cyber-cyan);
+  box-shadow: 0 0 20px var(--h-cyber-glow);
+}
+
+.roomHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.roomName {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hvacModeBadge {
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--h-text-muted);
+}
+
+.climateKnobArea {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tempReadout {
+  font-size: 42px;
+  font-weight: 800;
+  font-family: monospace;
+  color: #fff;
+}
+
+.tempSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #1e293b;
+  border-radius: 9999px;
+  outline: none;
+  margin-top: 12px;
+}
+
+.tempSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--h-cyber-cyan);
+  box-shadow: 0 0 10px var(--h-cyber-cyan);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.tempSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--h-text-muted);
+  border-top: 1px solid var(--h-border);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* Toggle Switches Grid Sheets */
+.switchGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.switchCard {
+  background: var(--h-surface);
+  border: 1px solid var(--h-border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.switchCard:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.switchCardActive {
+  composes: switchCard;
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.02);
+}
+
+.switchLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.switchZone {
+  font-size: 11px;
+  color: var(--h-text-muted);
+  margin-top: 2px;
+}
+
+/* Custom CSS Toggle Knob Layout */
+.toggleTrack {
+  width: 40px;
+  height: 22px;
+  background: #1e293b;
+  border-radius: 9999px;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.toggleTrackActive {
+  composes: toggleTrack;
+  background: var(--h-emerald);
+}
+
+.toggleHandle {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggleTrackActive .toggleHandle {
+  transform: translateX(18px);
+}
+
+/* Responsive Structural Breakpoint */
+@media (max-width: 968px) {
+  .layoutContainer {
+    grid-template-columns: 1fr;
+  }
+}
