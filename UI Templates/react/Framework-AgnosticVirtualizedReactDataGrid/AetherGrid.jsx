@@ -37,7 +37,7 @@ const GridShell = () => {
   );
 };
 
-export const AetherGrid = () => (
+export default AetherGrid = () => (
   <GridProvider>
     <GridShell />
   </GridProvider>
