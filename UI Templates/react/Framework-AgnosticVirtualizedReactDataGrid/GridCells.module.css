@@ -1,0 +1,72 @@
+.cell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+/* Header Cells Drag styles */
+.headerCell {
+  composes: cell;
+  font-weight: 600;
+  color: var(--g-text);
+  height: 48px;
+  cursor: grab;
+  user-select: none;
+  background: var(--g-surface);
+  transition: background 0.2s;
+  position: relative;
+}
+
+.headerCell:hover {
+  background: #f1f5f9;
+}
+
+.headerCell:active {
+  cursor: grabbing;
+}
+
+.dragging {
+  opacity: 0.4;
+  background: #e0e7ff !important;
+}
+
+.dragOver::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: var(--g-primary);
+}
+
+/* Row Rendering Layout */
+.row {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--g-border);
+  background: #ffffff;
+  transition: background 0.15s;
+}
+
+.row:hover {
+  background: #fafafa;
+}
+
+/* Custom internal cell pill-badges */
+.badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.Active { background: #d1fae5; color: #065f46; }
+.Staged { background: #fef3c7; color: #92400e; }
+.Deprecated { background: #fee2e2; color: #991b1b; }
