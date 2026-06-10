@@ -1,0 +1,438 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background:
+    radial-gradient(circle at top left, rgba(20, 184, 166, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.18), transparent 24%),
+    linear-gradient(135deg, #ecfeff 0%, #f8fafc 48%, #fff7ed 100%);
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 24px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.brandEyebrow,
+.sectionEyebrow,
+.panelEyebrow,
+.sidebarLabel {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.brand {
+  margin: 10px 0 0;
+  font-size: 30px;
+}
+
+.nav {
+  display: grid;
+  gap: 10px;
+  margin: 36px 0;
+}
+
+.navItem,
+.navItemActive {
+  border: 0;
+  border-radius: 16px;
+  padding: 14px 16px;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.navItem {
+  background: transparent;
+  color: #334155;
+}
+
+.navItemActive {
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  color: white;
+  box-shadow: 0 16px 28px rgba(15, 118, 110, 0.22);
+}
+
+.navItem:hover,
+.navItemActive:hover,
+.primaryButton:hover,
+.ghostButton:hover,
+.segment:hover,
+.segmentActive:hover,
+.iconButton:hover {
+  transform: translateY(-1px);
+}
+
+.sidebarCard,
+.kpiCard,
+.revenuePanel,
+.panel,
+.panelWide {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.sidebarCard {
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.sidebarCard h2 {
+  margin: 14px 0 10px;
+  font-size: 36px;
+}
+
+.sidebarText {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.main {
+  padding: 28px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.heading {
+  margin: 10px 0 0;
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 320px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.search input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  width: 100%;
+  font: inherit;
+}
+
+.primaryButton,
+.iconButton,
+.ghostButton,
+.segment,
+.segmentActive {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.primaryButton {
+  padding: 14px 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #111827, #0f766e);
+  color: white;
+  box-shadow: 0 14px 28px rgba(17, 24, 39, 0.16);
+}
+
+.iconButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.kpiCard {
+  padding: 22px;
+  border-radius: 26px;
+  display: grid;
+  gap: 12px;
+}
+
+.kpiIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.18), rgba(249, 115, 22, 0.18));
+  color: #0f766e;
+}
+
+.kpiLabel {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.kpiCard strong {
+  font-size: 28px;
+}
+
+.kpiTrendPositive,
+.kpiTrendNegative {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.kpiTrendPositive {
+  color: #0f766e;
+}
+
+.kpiTrendNegative {
+  color: #c2410c;
+}
+
+.revenuePanel,
+.panel,
+.panelWide {
+  border-radius: 30px;
+  padding: 24px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.panelHeader h3 {
+  margin: 8px 0 0;
+  font-size: 24px;
+}
+
+.segmented {
+  display: inline-flex;
+  padding: 6px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.segment,
+.segmentActive {
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.segment {
+  background: transparent;
+  color: #334155;
+}
+
+.segmentActive {
+  background: white;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+}
+
+.chartWrap {
+  height: 320px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+}
+
+.panelWide {
+  grid-column: 1 / 2;
+}
+
+.donutSection {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.donutChart {
+  height: 220px;
+}
+
+.legend,
+.watchlist,
+.table {
+  display: grid;
+  gap: 14px;
+}
+
+.legendItem,
+.watchItem,
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.legendItem > div:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.legendItem p,
+.watchItem p,
+.row p {
+  margin: 4px 0 0;
+  color: #64748b;
+}
+
+.barWrap {
+  height: 240px;
+}
+
+.row {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.amount {
+  font-weight: 700;
+}
+
+.statusClear,
+.statusPending,
+.statusScheduled {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.statusClear {
+  background: rgba(20, 184, 166, 0.14);
+  color: #0f766e;
+}
+
+.statusPending {
+  background: rgba(245, 158, 11, 0.18);
+  color: #b45309;
+}
+
+.statusScheduled {
+  background: rgba(59, 130, 246, 0.14);
+  color: #1d4ed8;
+}
+
+.gain,
+.loss {
+  font-weight: 700;
+}
+
+.gain {
+  color: #0f766e;
+}
+
+.loss {
+  color: #dc2626;
+}
+
+@media (max-width: 1180px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    gap: 24px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  }
+
+  .hero,
+  .contentGrid,
+  .donutSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .main {
+    padding: 18px;
+  }
+
+  .topbar,
+  .topbarActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search {
+    min-width: 0;
+  }
+
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .panelHeader,
+  .row,
+  .watchItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
