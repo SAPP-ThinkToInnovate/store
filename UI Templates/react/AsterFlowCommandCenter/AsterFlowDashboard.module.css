@@ -1,0 +1,367 @@
+:root {
+  color-scheme: dark;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  background:
+    radial-gradient(circle at top left, rgba(52, 102, 255, 0.28), transparent 32%),
+    radial-gradient(circle at top right, rgba(11, 207, 151, 0.14), transparent 24%),
+    linear-gradient(180deg, #08111f 0%, #0d1726 52%, #0a1120 100%);
+  color: #e8f2ff;
+  font-family: "Segoe UI", "Inter", sans-serif;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 24px;
+  background: rgba(7, 13, 24, 0.72);
+  border-right: 1px solid rgba(149, 183, 255, 0.12);
+  backdrop-filter: blur(24px);
+}
+
+.brandMark {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #5ac1ff, #6a7cff);
+  color: #04101d;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+}
+
+.brandBlock h1,
+.topbar h2,
+.chartHeader h2,
+.sectionHeader h2 {
+  margin: 0;
+  line-height: 1.05;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: #8ea6c9;
+}
+
+.nav {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.nav a {
+  color: #9eb4d5;
+  text-decoration: none;
+  padding: 12px 14px;
+  border-radius: 14px;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.nav a:hover,
+.activeNav {
+  background: rgba(96, 132, 255, 0.16);
+  color: #ecf4ff;
+  transform: translateX(2px);
+}
+
+.sidebarCard,
+.metricCard,
+.chartShell,
+.mixCard,
+.activitySection {
+  border: 1px solid rgba(148, 182, 255, 0.12);
+  background: rgba(9, 18, 31, 0.72);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.sidebarCard {
+  padding: 18px;
+  border-radius: 24px;
+}
+
+.sidebarCard strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.sidebarCard span,
+.metricCard p,
+.activityText p {
+  color: #8ca5c8;
+}
+
+.main {
+  padding: 30px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.topbarActions {
+  display: flex;
+  gap: 12px;
+}
+
+.primaryButton,
+.ghostButton {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #5ac1ff, #7a6cff);
+  color: #08111f;
+  font-weight: 700;
+}
+
+.ghostButton {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8f2ff;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.metricCard {
+  padding: 20px;
+  border-radius: 24px;
+}
+
+.metricRow,
+.mixMeta,
+.chartFooter,
+.mixSummary,
+.sectionHeader,
+.activityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.metricCard strong {
+  display: block;
+  margin: 16px 0 6px;
+  font-size: clamp(1.9rem, 2vw, 2.3rem);
+}
+
+.deltaUp,
+.deltaDown,
+.chartBadge,
+.livePill {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.82rem;
+}
+
+.deltaUp,
+.chartBadge,
+.livePill {
+  background: rgba(18, 214, 158, 0.14);
+  color: #7af0c8;
+}
+
+.deltaDown {
+  background: rgba(255, 138, 156, 0.14);
+  color: #ff9dad;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.9fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.chartShell,
+.mixCard,
+.activitySection {
+  border-radius: 28px;
+  padding: 22px;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.chart {
+  width: 100%;
+  height: 240px;
+  overflow: visible;
+}
+
+.gridLine {
+  stroke: rgba(154, 182, 227, 0.16);
+  stroke-width: 1;
+}
+
+.trendLine {
+  fill: none;
+  stroke: #7ad8ff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 14px rgba(90, 193, 255, 0.35));
+}
+
+.trendPoint {
+  fill: #0e1626;
+  stroke: #95e4ff;
+  stroke-width: 3;
+}
+
+.footerLabel {
+  display: block;
+  margin-bottom: 6px;
+  color: #89a1c4;
+  font-size: 0.84rem;
+}
+
+.mixBars {
+  display: grid;
+  gap: 18px;
+  margin: 20px 0 24px;
+}
+
+.mixRow {
+  display: grid;
+  gap: 10px;
+}
+
+.mixTrack {
+  height: 13px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mixFill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #5ac1ff, #11cf97);
+}
+
+.activityList {
+  display: grid;
+  gap: 14px;
+}
+
+.activityItem {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(148, 182, 255, 0.1);
+}
+
+.activityItem:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.activityDot {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7ad8ff, #11cf97);
+  box-shadow: 0 0 0 6px rgba(122, 216, 255, 0.08);
+}
+
+.activityText {
+  flex: 1;
+}
+
+.activityText strong,
+.activityMeta strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.activityMeta {
+  text-align: right;
+  min-width: 120px;
+  color: #dfeaff;
+}
+
+.activityMeta span {
+  color: #86a0c2;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 1120px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    gap: 24px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(149, 183, 255, 0.12);
+  }
+
+  .metricsGrid,
+  .featureGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .main {
+    padding: 18px;
+  }
+
+  .topbar,
+  .sectionHeader,
+  .chartHeader,
+  .activityItem,
+  .chartFooter,
+  .mixSummary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .metricsGrid,
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbarActions {
+    width: 100%;
+  }
+
+  .primaryButton,
+  .ghostButton {
+    flex: 1;
+  }
+
+  .activityMeta {
+    min-width: 0;
+    text-align: left;
+  }
+}
