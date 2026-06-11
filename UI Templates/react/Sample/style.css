@@ -1,0 +1,14 @@
+input{
+    padding: 10px;
+    color: blue;
+}
+
+label{
+    font-size:0.85rem;
+    color: gray;
+    margin-right: 10px;
+}
+
+label::after{
+    content: ":";
+}
