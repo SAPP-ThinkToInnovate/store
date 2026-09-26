@@ -1,4 +1,4 @@
-module.exports = [
+[
   {
     course: "HTML",
     description:
